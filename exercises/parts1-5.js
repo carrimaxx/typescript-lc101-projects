@@ -35,7 +35,7 @@ var Spacecraft = /** @class */ (function () {
     Spacecraft.prototype.getDaysToLocation = function (kilometersAway) {
         var milesAway = kilometersAway * this.milesPerKilometer;
         var hoursToLocation = milesAway / this.speedMph;
-        return hoursToLocation;
+        return hoursToLocation / 24;
     };
     Spacecraft.prototype.printDaysToLocation = function (location) {
         console.log(this.name + " would take " + this.getDaysToLocation(location.kilometersAway) + " days to get to " + location.name + ".");
@@ -48,9 +48,9 @@ var spaceShuttle = new Spacecraft('Determination', 17500);
 // // instance of the class.
 // console.log(`${spaceShuttle.name} will reach Mars in ${spaceShuttle.getDaysToLocation(kilometersToMars)} days.`);
 // console.log(`${spaceShuttle.name} will reach the Moon in ${spaceShuttle.getDaysToLocation(kilometersToTheMoon)} days.`);
-spaceShuttle.printDaysToLocation(new SpaceLocation_1.SpaceLocation('Mars', kilometersToMars));
-spaceShuttle.printDaysToLocation(new SpaceLocation_1.SpaceLocation('the Moon', kilometersToTheMoon));
 // Part 5: Export and Import the SpaceLocation Class
 // Add the required import statement BEFORE the part 1 concent.
 // Add the printDaysToLocation function to the Spacecraft class.
 // Paste in the code from step 6 here:
+spaceShuttle.printDaysToLocation(new SpaceLocation_1.SpaceLocation('Mars', kilometersToMars));
+spaceShuttle.printDaysToLocation(new SpaceLocation_1.SpaceLocation('the Moon', kilometersToTheMoon));
